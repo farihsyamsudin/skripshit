@@ -110,7 +110,6 @@ else:
     # Membuat peta awal di titik tengah (bisa disesuaikan)
     map_center = [final_df['lat'].mean(), final_df['lon'].mean()]
     m = folium.Map(location=map_center, zoom_start=9)
-    marker_cluster = MarkerCluster().add_to(m)
 
     # Warna dinamis pakai kombinasi RGB
     color_map = {}
@@ -133,11 +132,11 @@ else:
             fill=True,
             fill_opacity=0.7,
             popup=folium.Popup(popup_text, max_width=300)
-        ).add_to(marker_cluster)
+        ).add_to(m)  # Tambahkan langsung ke map, bukan ke MarkerCluster
 
     # Simpan ke file HTML
-    m.save("output_peta_anomali_FIX.html")
-    print("Peta disimpan di output_peta_anomali_FIX.html")
+    m.save("output_peta_anomali_FIX_not_cluster.html")
+    print("Peta disimpan di output_peta_anomali_FIX_not_cluster.html")
 
 end = time.time()
 print(f"Waktu eksekusi: {round((end - start)/60, 2)} menit")
