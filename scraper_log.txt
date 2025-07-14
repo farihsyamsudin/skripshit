@@ -1,0 +1,8 @@
+525200009,ERROR
+525010227,ERROR
+525005373,Cement Carrier
+525007397,Passenger/Ro-Ro Cargo Ship
+352003702,General Cargo Ship
+525001136,Passenger/General Cargo Ship
+525121022,Oil Products Tanker
+525103002,ERROR
