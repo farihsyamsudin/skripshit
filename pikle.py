@@ -2,18 +2,25 @@ import pandas as pd
 
 try:
     # 1) Baca file
-    df = pd.read_pickle("data/maritim_selat_sunda.pkl")
+    df = pd.read_pickle("data/maritim_selat_sunda_with_type.pkl")
 
     # 2) Info + contoh baris
     print(df.info(show_counts=True, memory_usage='deep'))  # lebih jelas
     print(df.head())
 
     # 3) Cek kolom aistype dan tampilkan 30 kode pertama yang unik
-    if 'aistype' in df.columns:
-        unique_codes = df['aistype'].dropna().unique()   # buang NaN dulu
-        print("First 100 unique aistype codes:", unique_codes[:100])
+    # if 'aistype' in df.columns:
+    #     unique_codes = df['aistype'].dropna().unique()   # buang NaN dulu
+    #     print("First 100 unique aistype codes:", unique_codes[:100])
+    # else:
+    #     print("[!] Kolom 'aistype' tidak ditemukan.")
+
+    # 4) Tampilkan kolom 'created_at' saja
+    if 'created_at' in df.columns:
+        print(df['created_at'].head(10))
     else:
-        print("[!] Kolom 'aistype' tidak ditemukan.")
+        print("[!] Kolom 'created_at' tidak ditemukan.")
+
 
 except FileNotFoundError:
     print("File tidak ditemukan. Pastikan path‑nya benar.")
