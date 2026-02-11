@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_30a137e865cc8a888e25f8fc38e4a447 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/leaflet.markercluster.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/MarkerCluster.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/MarkerCluster.Default.css"/>
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_30a137e865cc8a888e25f8fc38e4a447" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_30a137e865cc8a888e25f8fc38e4a447 = L.map(
+                "map_30a137e865cc8a888e25f8fc38e4a447",
+                {
+                    center: [1.2148035764694214, 103.8443603515625],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 10,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_396a8966248a6a71bfc82b347ef5574d = L.tileLayer(
+                "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 20,
+  "maxNativeZoom": 20,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca href=\"https://carto.com/attributions\"\u003eCARTO\u003c/a\u003e",
+  "subdomains": "abcd",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_396a8966248a6a71bfc82b347ef5574d.addTo(map_30a137e865cc8a888e25f8fc38e4a447);
+        
+    
+            var marker_cluster_9d520c244e9943819ddd743e894da4d2 = L.markerClusterGroup(
+                {
+}
+            );
+        
+    
+            var circle_marker_fc3c7a2dc923e8a3b7694d7f78eadd05 = L.circleMarker(
+                [1.1886061429977417, 103.75033569335938],
+                {"bubblingMouseEvents": true, "color": "#6a1e1e", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#6a1e1e", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_9d520c244e9943819ddd743e894da4d2);
+        
+    
+        var popup_1018c6caf5ea18048eba7552ac3a1851 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_49833be813ac967645056e2271c59200 = $(`<div id="html_49833be813ac967645056e2271c59200" style="width: 100.0%; height: 100.0%;"><div style='width:200px'><b>⚠️ SUSPECTED TRANSHIPMENT</b><br><hr><b>Kapal 1:</b> 255916315<br><b>Kapal 2:</b> 372072000<br><b>Durasi:</b> 39.0 menit<br><b>Mulai:</b> 2025-10-28 00:36:00+00:00<br><b>Selesai:</b> 2025-10-28 01:15:00+00:00</div></div>`)[0];
+                popup_1018c6caf5ea18048eba7552ac3a1851.setContent(html_49833be813ac967645056e2271c59200);
+            
+        
+
+        circle_marker_fc3c7a2dc923e8a3b7694d7f78eadd05.bindPopup(popup_1018c6caf5ea18048eba7552ac3a1851)
+        ;
+
+        
+    
+    
+            circle_marker_fc3c7a2dc923e8a3b7694d7f78eadd05.bindTooltip(
+                `<div>
+                     MMSI: 255916315 & 372072000
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_32d955840ec37c033365d2153dad693d = L.circleMarker(
+                [1.1885888576507568, 103.75032806396484],
+                {"bubblingMouseEvents": true, "color": "#6a1e1e", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#6a1e1e", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_9d520c244e9943819ddd743e894da4d2);
+        
+    
+        var popup_25bc39f04ccb161bef133e6e5be23576 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_04dcf900165d23e9f7c7e3f36f023ea5 = $(`<div id="html_04dcf900165d23e9f7c7e3f36f023ea5" style="width: 100.0%; height: 100.0%;"><div style='width:200px'><b>⚠️ SUSPECTED TRANSHIPMENT</b><br><hr><b>Kapal 1:</b> 255916315<br><b>Kapal 2:</b> 372072000<br><b>Durasi:</b> 39.0 menit<br><b>Mulai:</b> 2025-10-29 00:48:00+00:00<br><b>Selesai:</b> 2025-10-29 01:27:00+00:00</div></div>`)[0];
+                popup_25bc39f04ccb161bef133e6e5be23576.setContent(html_04dcf900165d23e9f7c7e3f36f023ea5);
+            
+        
+
+        circle_marker_32d955840ec37c033365d2153dad693d.bindPopup(popup_25bc39f04ccb161bef133e6e5be23576)
+        ;
+
+        
+    
+    
+            circle_marker_32d955840ec37c033365d2153dad693d.bindTooltip(
+                `<div>
+                     MMSI: 255916315 & 372072000
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_6084101db535b3ce79fad146418c9635 = L.circleMarker(
+                [1.307734489440918, 104.11866760253906],
+                {"bubblingMouseEvents": true, "color": "#494e22", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#494e22", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_9d520c244e9943819ddd743e894da4d2);
+        
+    
+        var popup_6efaa68348246dc927308f684cccf0e8 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_e534e3db4bba85ceedf379df4a7e2099 = $(`<div id="html_e534e3db4bba85ceedf379df4a7e2099" style="width: 100.0%; height: 100.0%;"><div style='width:200px'><b>⚠️ SUSPECTED TRANSHIPMENT</b><br><hr><b>Kapal 1:</b> 352800000<br><b>Kapal 2:</b> 538002666<br><b>Durasi:</b> 51.0 menit<br><b>Mulai:</b> 2025-12-30 04:14:00+00:00<br><b>Selesai:</b> 2025-12-30 05:05:00+00:00</div></div>`)[0];
+                popup_6efaa68348246dc927308f684cccf0e8.setContent(html_e534e3db4bba85ceedf379df4a7e2099);
+            
+        
+
+        circle_marker_6084101db535b3ce79fad146418c9635.bindPopup(popup_6efaa68348246dc927308f684cccf0e8)
+        ;
+
+        
+    
+    
+            circle_marker_6084101db535b3ce79fad146418c9635.bindTooltip(
+                `<div>
+                     MMSI: 352800000 & 538002666
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_ec0875c5ea3be67660f1fa1aa0de4e79 = L.circleMarker(
+                [1.1742849349975586, 103.75811004638672],
+                {"bubblingMouseEvents": true, "color": "#76562f", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#76562f", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_9d520c244e9943819ddd743e894da4d2);
+        
+    
+        var popup_45a35b1202f4f6bf67e1e0434af9c65a = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_8790b1fab0555d2768a0dc05d07953b1 = $(`<div id="html_8790b1fab0555d2768a0dc05d07953b1" style="width: 100.0%; height: 100.0%;"><div style='width:200px'><b>⚠️ SUSPECTED TRANSHIPMENT</b><br><hr><b>Kapal 1:</b> 525114108<br><b>Kapal 2:</b> 565574000<br><b>Durasi:</b> 47.0 menit<br><b>Mulai:</b> 2025-10-27 23:39:00+00:00<br><b>Selesai:</b> 2025-10-28 00:26:00+00:00</div></div>`)[0];
+                popup_45a35b1202f4f6bf67e1e0434af9c65a.setContent(html_8790b1fab0555d2768a0dc05d07953b1);
+            
+        
+
+        circle_marker_ec0875c5ea3be67660f1fa1aa0de4e79.bindPopup(popup_45a35b1202f4f6bf67e1e0434af9c65a)
+        ;
+
+        
+    
+    
+            circle_marker_ec0875c5ea3be67660f1fa1aa0de4e79.bindTooltip(
+                `<div>
+                     MMSI: 525114108 & 565574000
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            marker_cluster_9d520c244e9943819ddd743e894da4d2.addTo(map_30a137e865cc8a888e25f8fc38e4a447);
+        
+    
+            var circle_dc4b9e1d85a33513704c19efca2df385 = L.circle(
+                [1.1617, 104.0047],
+                {"bubblingMouseEvents": true, "color": "gray", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "gray", "fillOpacity": 0.1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3000, "stroke": true, "weight": 1}
+            ).addTo(map_30a137e865cc8a888e25f8fc38e4a447);
+        
+    
+            circle_dc4b9e1d85a33513704c19efca2df385.bindTooltip(
+                `<div>
+                     Zona Pelabuhan: Batu Ampar (Cargo)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_ade0cd244fe8f2227a137b6d210e0f3a = L.circle(
+                [1.1108, 104.1403],
+                {"bubblingMouseEvents": true, "color": "gray", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "gray", "fillOpacity": 0.1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3000, "stroke": true, "weight": 1}
+            ).addTo(map_30a137e865cc8a888e25f8fc38e4a447);
+        
+    
+            circle_ade0cd244fe8f2227a137b6d210e0f3a.bindTooltip(
+                `<div>
+                     Zona Pelabuhan: Kabil (Citranusa/Oil)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_0058f98a49dec364deaea4171b435d94 = L.circle(
+                [1.1261, 103.9278],
+                {"bubblingMouseEvents": true, "color": "gray", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "gray", "fillOpacity": 0.1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3000, "stroke": true, "weight": 1}
+            ).addTo(map_30a137e865cc8a888e25f8fc38e4a447);
+        
+    
+            circle_0058f98a49dec364deaea4171b435d94.bindTooltip(
+                `<div>
+                     Zona Pelabuhan: Sekupang (Ferry/Intl)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_f62c882d6b193b1bef228b6abbfd9869 = L.circle(
+                [1.075, 103.905],
+                {"bubblingMouseEvents": true, "color": "gray", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "gray", "fillOpacity": 0.1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3000, "stroke": true, "weight": 1}
+            ).addTo(map_30a137e865cc8a888e25f8fc38e4a447);
+        
+    
+            circle_f62c882d6b193b1bef228b6abbfd9869.bindTooltip(
+                `<div>
+                     Zona Pelabuhan: Tanjung Uncang (Shipyard)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_4febc8e22795782ae0acdf836ee1f99a = L.circle(
+                [1.196, 104.083],
+                {"bubblingMouseEvents": true, "color": "gray", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "gray", "fillOpacity": 0.1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3000, "stroke": true, "weight": 1}
+            ).addTo(map_30a137e865cc8a888e25f8fc38e4a447);
+        
+    
+            circle_4febc8e22795782ae0acdf836ee1f99a.bindTooltip(
+                `<div>
+                     Zona Pelabuhan: Nongsa Pura
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_5cb0ae89dfa21c4ae8300c08ea093717 = L.circle(
+                [1.037, 104.148],
+                {"bubblingMouseEvents": true, "color": "gray", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "gray", "fillOpacity": 0.1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3000, "stroke": true, "weight": 1}
+            ).addTo(map_30a137e865cc8a888e25f8fc38e4a447);
+        
+    
+            circle_5cb0ae89dfa21c4ae8300c08ea093717.bindTooltip(
+                `<div>
+                     Zona Pelabuhan: Telaga Punggur
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_61cd79e3f26d40974cb0f84ae1b0300f = L.circle(
+                [1.132, 104.052],
+                {"bubblingMouseEvents": true, "color": "gray", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "gray", "fillOpacity": 0.1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3000, "stroke": true, "weight": 1}
+            ).addTo(map_30a137e865cc8a888e25f8fc38e4a447);
+        
+    
+            circle_61cd79e3f26d40974cb0f84ae1b0300f.bindTooltip(
+                `<div>
+                     Zona Pelabuhan: Batam Centre
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_247bf8260b69fffa74426d41fcc85a34 = L.circle(
+                [1.155, 103.995],
+                {"bubblingMouseEvents": true, "color": "gray", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "gray", "fillOpacity": 0.1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3000, "stroke": true, "weight": 1}
+            ).addTo(map_30a137e865cc8a888e25f8fc38e4a447);
+        
+    
+            circle_247bf8260b69fffa74426d41fcc85a34.bindTooltip(
+                `<div>
+                     Zona Pelabuhan: Harbour Bay
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_b265a078bc5a3cb6a6a33d950aa23d04 = L.circle(
+                [1.0713, 104.2209],
+                {"bubblingMouseEvents": true, "color": "gray", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "gray", "fillOpacity": 0.1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3000, "stroke": true, "weight": 1}
+            ).addTo(map_30a137e865cc8a888e25f8fc38e4a447);
+        
+    
+            circle_b265a078bc5a3cb6a6a33d950aa23d04.bindTooltip(
+                `<div>
+                     Zona Pelabuhan: Tanjung Uban (Oil)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_11111805ba3f8235b0d374a1884714bd = L.circle(
+                [1.2604, 103.6888],
+                {"bubblingMouseEvents": true, "color": "gray", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "gray", "fillOpacity": 0.1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3000, "stroke": true, "weight": 1}
+            ).addTo(map_30a137e865cc8a888e25f8fc38e4a447);
+        
+    
+            circle_11111805ba3f8235b0d374a1884714bd.bindTooltip(
+                `<div>
+                     Zona Pelabuhan: Jurong Port
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_063e1cf2d5e703d815ade2d3550b152f = L.circle(
+                [1.2761, 103.7914],
+                {"bubblingMouseEvents": true, "color": "gray", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "gray", "fillOpacity": 0.1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3000, "stroke": true, "weight": 1}
+            ).addTo(map_30a137e865cc8a888e25f8fc38e4a447);
+        
+    
+            circle_063e1cf2d5e703d815ade2d3550b152f.bindTooltip(
+                `<div>
+                     Zona Pelabuhan: Pasir Panjang
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_62b8acdd3c045c21d72124c12a539a43 = L.circle(
+                [1.26, 103.83],
+                {"bubblingMouseEvents": true, "color": "gray", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "gray", "fillOpacity": 0.1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3000, "stroke": true, "weight": 1}
+            ).addTo(map_30a137e865cc8a888e25f8fc38e4a447);
+        
+    
+            circle_62b8acdd3c045c21d72124c12a539a43.bindTooltip(
+                `<div>
+                     Zona Pelabuhan: Keppel Terminal
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_03fce0e33b970d87a002b7bcad8190d1 = L.circle(
+                [1.263, 103.835],
+                {"bubblingMouseEvents": true, "color": "gray", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "gray", "fillOpacity": 0.1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3000, "stroke": true, "weight": 1}
+            ).addTo(map_30a137e865cc8a888e25f8fc38e4a447);
+        
+    
+            circle_03fce0e33b970d87a002b7bcad8190d1.bindTooltip(
+                `<div>
+                     Zona Pelabuhan: Brani Terminal
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_b841d113cc6ce327d519602ab6ffd7b3 = L.circle(
+                [1.267, 103.845],
+                {"bubblingMouseEvents": true, "color": "gray", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "gray", "fillOpacity": 0.1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3000, "stroke": true, "weight": 1}
+            ).addTo(map_30a137e865cc8a888e25f8fc38e4a447);
+        
+    
+            circle_b841d113cc6ce327d519602ab6ffd7b3.bindTooltip(
+                `<div>
+                     Zona Pelabuhan: Tanjong Pagar
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_871d0e9f58138fbccb403c12793c9b7b = L.circle(
+                [1.27, 103.864],
+                {"bubblingMouseEvents": true, "color": "gray", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "gray", "fillOpacity": 0.1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3000, "stroke": true, "weight": 1}
+            ).addTo(map_30a137e865cc8a888e25f8fc38e4a447);
+        
+    
+            circle_871d0e9f58138fbccb403c12793c9b7b.bindTooltip(
+                `<div>
+                     Zona Pelabuhan: Marina South Pier
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_b6c21014fb97bbdcb995954de4aafb92 = L.circle(
+                [1.32, 104.02],
+                {"bubblingMouseEvents": true, "color": "gray", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "gray", "fillOpacity": 0.1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3000, "stroke": true, "weight": 1}
+            ).addTo(map_30a137e865cc8a888e25f8fc38e4a447);
+        
+    
+            circle_b6c21014fb97bbdcb995954de4aafb92.bindTooltip(
+                `<div>
+                     Zona Pelabuhan: Changi Naval Base
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_26efb633b3c8e9e0293b66cb6c86939b = L.circle(
+                [1.35, 104.03],
+                {"bubblingMouseEvents": true, "color": "gray", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "gray", "fillOpacity": 0.1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3000, "stroke": true, "weight": 1}
+            ).addTo(map_30a137e865cc8a888e25f8fc38e4a447);
+        
+    
+            circle_26efb633b3c8e9e0293b66cb6c86939b.bindTooltip(
+                `<div>
+                     Zona Pelabuhan: Changi Cargo
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_31ffa200950eca9b257b3c63d0581d3f = L.circle(
+                [1.29, 103.62],
+                {"bubblingMouseEvents": true, "color": "gray", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "gray", "fillOpacity": 0.1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3000, "stroke": true, "weight": 1}
+            ).addTo(map_30a137e865cc8a888e25f8fc38e4a447);
+        
+    
+            circle_31ffa200950eca9b257b3c63d0581d3f.bindTooltip(
+                `<div>
+                     Zona Pelabuhan: Tuas Mega Port
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_8504fd3fa187fa4ac94df0c491642934 = L.circle(
+                [1.455, 103.825],
+                {"bubblingMouseEvents": true, "color": "gray", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "gray", "fillOpacity": 0.1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3000, "stroke": true, "weight": 1}
+            ).addTo(map_30a137e865cc8a888e25f8fc38e4a447);
+        
+    
+            circle_8504fd3fa187fa4ac94df0c491642934.bindTooltip(
+                `<div>
+                     Zona Pelabuhan: Sembawang
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_0af9c07a920b499e1d1240a210948354 = L.circle(
+                [1.36, 103.55],
+                {"bubblingMouseEvents": true, "color": "gray", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "gray", "fillOpacity": 0.1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3000, "stroke": true, "weight": 1}
+            ).addTo(map_30a137e865cc8a888e25f8fc38e4a447);
+        
+    
+            circle_0af9c07a920b499e1d1240a210948354.bindTooltip(
+                `<div>
+                     Zona Pelabuhan: Tanjung Pelepas (PTP)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_f63cb9383c1f30f43f0a4846ee8f276b = L.circle(
+                [1.33, 103.54],
+                {"bubblingMouseEvents": true, "color": "gray", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "gray", "fillOpacity": 0.1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3000, "stroke": true, "weight": 1}
+            ).addTo(map_30a137e865cc8a888e25f8fc38e4a447);
+        
+    
+            circle_f63cb9383c1f30f43f0a4846ee8f276b.bindTooltip(
+                `<div>
+                     Zona Pelabuhan: Tanjung Bin (Power/Coal)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_5ff101b72d29fd71129cb10438538e79 = L.circle(
+                [1.32, 103.45],
+                {"bubblingMouseEvents": true, "color": "gray", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "gray", "fillOpacity": 0.1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3000, "stroke": true, "weight": 1}
+            ).addTo(map_30a137e865cc8a888e25f8fc38e4a447);
+        
+    
+            circle_5ff101b72d29fd71129cb10438538e79.bindTooltip(
+                `<div>
+                     Zona Pelabuhan: Kukup Anchorage
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_b0da2ef876f563b1fbb32fa91b4ea580 = L.circle(
+                [1.43, 103.9],
+                {"bubblingMouseEvents": true, "color": "gray", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "gray", "fillOpacity": 0.1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3000, "stroke": true, "weight": 1}
+            ).addTo(map_30a137e865cc8a888e25f8fc38e4a447);
+        
+    
+            circle_b0da2ef876f563b1fbb32fa91b4ea580.bindTooltip(
+                `<div>
+                     Zona Pelabuhan: Johor Port (Pasir Gudang)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_4bc630448c3a79970568f1742b9a0ff8 = L.circle(
+                [1.45, 104.01],
+                {"bubblingMouseEvents": true, "color": "gray", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "gray", "fillOpacity": 0.1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3000, "stroke": true, "weight": 1}
+            ).addTo(map_30a137e865cc8a888e25f8fc38e4a447);
+        
+    
+            circle_4bc630448c3a79970568f1742b9a0ff8.bindTooltip(
+                `<div>
+                     Zona Pelabuhan: Tanjung Langsat
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+</script>
+</html>
