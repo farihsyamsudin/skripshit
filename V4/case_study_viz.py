@@ -7,17 +7,18 @@ from dateutil import parser
 
 # ================= CONFIGURATION =================
 # Pastikan nama file sesuai dengan hasil export Compass kamu
-INPUT_JSON = "V4/data/study-case.ais.json"
-OUTPUT_HTML = "results/peta_jalur_lengkap_mongo_legend.html"
+INPUT_JSON = "V4/data/study-case-2.ais.json"
+OUTPUT_HTML = "results/peta_jalur_lengkap_mongo_legend_censored_study_case_2.html"
 
 # Lokasi Kejadian (Untuk Center Peta & Highlight)
-INCIDENT_COORDS = [1.3077345, 104.11867]
+INCIDENT_COORDS = [1.1742, 103.7581]
 
 # Definisi Kapal
-MMSI_A = 352800000
-MMSI_B = 538002666
-names = {MMSI_A: 'Kapal A', MMSI_B: 'Kapal B'}
-colors = {MMSI_A: 'blue', MMSI_B: 'red'}
+MMSI_A = 525114108
+MMSI_B = 565574000
+labels = {MMSI_A: "525XXXXXX", MMSI_B: "565XXXXXX"}
+names  = {MMSI_A: 'Kapal C',   MMSI_B: 'Kapal D'}
+colors = {MMSI_A: 'blue',      MMSI_B: 'red'}
 
 def load_compass_json(filepath):
     with open(filepath, 'r') as f:
@@ -126,13 +127,13 @@ def visualize_mongo_data():
      <div style="margin-bottom: 5px;">
        <i class="fa fa-circle" style="color:blue"></i> 
        <b>{names[MMSI_A]}</b> <br>
-       <span style="color:grey;">(MMSI: {MMSI_A})</span>
+       <span style="color:grey;">(MMSI: {labels[MMSI_A]}))</span>
      </div>
      
      <div style="margin-bottom: 10px;">
        <i class="fa fa-circle" style="color:red"></i> 
        <b>{names[MMSI_B]}</b> <br>
-       <span style="color:grey;">(MMSI: {MMSI_B})</span>
+       <span style="color:grey;">(MMSI: {labels[MMSI_B]}))</span>
      </div>
 
      <i class="fa fa-play-circle" style="color:green"></i> Titik Awal Terdeteksi<br>

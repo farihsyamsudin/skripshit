@@ -144,7 +144,7 @@ def visualize_anomalies(final_df, output_prefix, buffer_km):
     m.get_root().html.add_child(Element(legend_html))
 
     # Simpan
-    output_html = f"results/{output_prefix}_map.html"
+    output_html = f"results/{output_prefix}_map_debug.html"
     m.save(output_html)
     print(f"🗺️  Peta interaktif disimpan di: {output_html}")
 
@@ -211,7 +211,7 @@ def run_real_case_mode():
         export_df['start_time'] = export_df['start_time'].dt.strftime('%Y-%m-%d %H:%M:%S')
         export_df['end_time'] = export_df['end_time'].dt.strftime('%Y-%m-%d %H:%M:%S')
         cols = ['mmsi_1', 'mmsi_2', 'start_time', 'end_time', 'duration_min', 'lat', 'lon']
-        export_df[cols].to_csv("results/transhipment_anomalies_formatted.csv", index=False)
+        export_df[cols].to_csv("results/transhipment_anomalies_formatted_debug.csv", index=False)
         
         # VISUALISASI TANPA CLUSTERING
         visualize_anomalies(final_df, "transhipment_batam", PORT_DISTANCE_THRESHOLD_KM)

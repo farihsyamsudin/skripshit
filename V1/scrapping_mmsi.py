@@ -5,9 +5,9 @@ import os
 from playwright.sync_api import sync_playwright, TimeoutError as PlaywrightTimeout
 
 # ======================== CONFIG =========================
-CSV_SOURCE = "mmsi_list_unique.csv"
-CSV_OUTPUT = "scraped_vessel_type.csv"
-LOG_FILE = "scraper_log.txt"
+CSV_SOURCE = "V4/data/mmsi_list_unique.csv"
+CSV_OUTPUT = "V4/data/scraped_vessel_type.csv"
+LOG_FILE = "V4/data/scraper_log.txt"
 BATCH_SIZE = 100
 HEADLESS_MODE = True  # Ubah ke False kalau mau debugging
 # =========================================================

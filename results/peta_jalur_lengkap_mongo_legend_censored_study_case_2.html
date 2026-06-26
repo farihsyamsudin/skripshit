@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_9e08fafe37bb72d152355ffbc1168411 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+</head>
+<body>
+    
+    
+     <div style="
+     position: fixed; 
+     bottom: 50px; left: 50px; width: 250px; height: 200px; 
+     border:2px solid grey; z-index:9999; font-size:12px;
+     background-color:white; opacity:0.95; padding: 10px;
+     border-radius: 5px; font-family: Arial, sans-serif;
+     box-shadow: 3px 3px 5px #888888;
+     ">
+     <b>Legenda Pergerakan (Data Mentah)</b><br><hr>
+     
+     <div style="margin-bottom: 5px;">
+       <i class="fa fa-circle" style="color:blue"></i> 
+       <b>Kapal C</b> <br>
+       <span style="color:grey;">(MMSI: 525XXXXXX))</span>
+     </div>
+     
+     <div style="margin-bottom: 10px;">
+       <i class="fa fa-circle" style="color:red"></i> 
+       <b>Kapal D</b> <br>
+       <span style="color:grey;">(MMSI: 565XXXXXX))</span>
+     </div>
+
+     <i class="fa fa-play-circle" style="color:green"></i> Titik Awal Terdeteksi<br>
+     <i class="fa fa-stop-circle" style="color:black"></i> Titik Akhir Terdeteksi<br>
+     <br>
+     <i class="fa fa-exclamation-triangle" style="color:orange"></i> <b>Lokasi Transhipment</b>
+     </div>
+     
+    
+            <div class="folium-map" id="map_9e08fafe37bb72d152355ffbc1168411" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_9e08fafe37bb72d152355ffbc1168411 = L.map(
+                "map_9e08fafe37bb72d152355ffbc1168411",
+                {
+                    center: [1.1742, 103.7581],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 7,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_fd035bb299a83601394910ff5c09cf11 = L.tileLayer(
+                "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 20,
+  "maxNativeZoom": 20,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca href=\"https://carto.com/attributions\"\u003eCARTO\u003c/a\u003e",
+  "subdomains": "abcd",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_fd035bb299a83601394910ff5c09cf11.addTo(map_9e08fafe37bb72d152355ffbc1168411);
+        
+    
+            var poly_line_f3ea2e65ff1c1794f0eda64962108cdb = L.polyline(
+                [[1.2910766666666667, 104.06931333333333], [1.2911416666666666, 104.06935666666666], [1.17476, 103.75814], [1.1748083333333332, 103.75827166666667], [1.1748066666666668, 103.75826666666667], [1.174835, 103.758215], [1.1746933333333334, 103.75805], [1.1745433333333333, 103.75806166666666], [1.17455, 103.75801666666666], [1.174505, 103.758005], [1.1743333333333332, 103.75792833333334], [1.174355, 103.75787], [1.1742533333333334, 103.75778333333334], [1.1742, 103.75766166666666], [1.1740733333333333, 103.75744666666667], [1.1739566666666668, 103.75744666666667], [1.173895, 103.75741333333333], [1.198755, 103.74968666666666], [1.1972033333333334, 103.74990833333334], [1.1972016666666667, 103.74993], [1.19729, 103.749945], [1.1973033333333334, 103.74993833333333], [1.197335, 103.74995666666666], [1.1973316666666667, 103.749955], [1.1973533333333333, 103.74990166666667], [1.1972066666666668, 103.749815], [1.1972583333333333, 103.749855], [1.239775, 103.882355], [1.2536816666666666, 103.88966666666667], [1.29409, 103.96811833333334], [1.2940983333333334, 103.968145], [1.29402, 103.968155], [1.29406, 103.96815], [1.2940716666666667, 103.968145], [1.2939816666666666, 103.96819666666667], [1.2940333333333334, 103.96823166666667], [1.2939966666666667, 103.968215]],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 2.5}
+            ).addTo(map_9e08fafe37bb72d152355ffbc1168411);
+        
+    
+            poly_line_f3ea2e65ff1c1794f0eda64962108cdb.bindTooltip(
+                `<div>
+                     Jalur Kapal D
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_57ae00075e3499fe4300a499e5ef5cc7 = L.marker(
+                [1.2910766666666667, 104.06931333333333],
+                {
+}
+            ).addTo(map_9e08fafe37bb72d152355ffbc1168411);
+        
+    
+            var icon_67eae014bc83ec692345b033e639034b = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "play",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+            marker_57ae00075e3499fe4300a499e5ef5cc7.bindTooltip(
+                `<div>
+                     <b>Awal Terdeteksi (Kapal D)</b><br>2025-10-23 09:31<br>Lat/Lon: 1.291, 104.069
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_57ae00075e3499fe4300a499e5ef5cc7.setIcon(icon_67eae014bc83ec692345b033e639034b);
+            
+    
+            var marker_75514e53bb3ae6c1eb52dd815032c741 = L.marker(
+                [1.2939966666666667, 103.968215],
+                {
+}
+            ).addTo(map_9e08fafe37bb72d152355ffbc1168411);
+        
+    
+            var icon_379254d9a085d96f6042113d29cd4f56 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "black",
+  "iconColor": "white",
+  "icon": "stop",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+            marker_75514e53bb3ae6c1eb52dd815032c741.bindTooltip(
+                `<div>
+                     <b>Akhir Terdeteksi (Kapal D)</b><br>2025-10-30 17:05
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_75514e53bb3ae6c1eb52dd815032c741.setIcon(icon_379254d9a085d96f6042113d29cd4f56);
+            
+    
+            var poly_line_ef50d64d6732fe94c3e767db89022587 = L.polyline(
+                [[-6.725295, 114.20403333333333], [-6.719745, 114.19815666666666], [-6.716806666666667, 114.19508166666667], [-6.67089, 114.14691833333333], [-6.629148333333333, 114.10571333333333], [-6.59761, 114.07679], [-6.5972566666666665, 114.07646833333334], [-6.42095, 113.90826333333334], [-6.420865, 113.90818333333333], [-6.235571666666667, 113.73935833333333], [-6.235401666666666, 113.73918833333333], [-6.229886666666666, 113.73384833333333], [-6.14007, 113.63276166666667], [-6.12125, 113.61448833333333], [-6.120821666666667, 113.61407666666666], [-6.080345, 113.57883166666667], [-5.71094, 113.223785], [-5.693631666666667, 113.19221333333333], [1.2753833333333333, 104.12984833333333], [1.17425, 103.758315], [1.1742333333333332, 103.75837166666666], [1.174245, 103.75837833333334], [1.1739816666666667, 103.75810166666666], [1.17394, 103.75811333333333], [1.1739516666666667, 103.75808666666667], [1.1738633333333333, 103.75799], [1.1738133333333334, 103.757925], [1.1734883333333332, 103.75717], [1.173435, 103.75714333333333], [1.173375, 103.75714666666667], [1.1745683333333334, 103.75424833333334], [1.706235, 102.73900333333333], [1.7127183333333333, 102.72662833333334], [1.8055033333333332, 102.543665], [1.80564, 102.543385], [1.8261533333333333, 102.50119166666667], [1.8275966666666668, 102.49835666666667], [1.8363083333333334, 102.48198333333333], [1.853635, 102.449575], [1.8647183333333333, 102.42894333333334], [1.8651133333333334, 102.42825333333333], [1.88772, 102.386305], [1.9243683333333332, 102.31597833333333], [2.0053316666666667, 102.19121833333334], [2.0061016666666664, 102.19024166666667], [2.015795, 102.17776833333333], [2.18664, 101.96806], [2.1874833333333332, 101.96702], [2.197583333333333, 101.95547], [2.2109216666666667, 101.94011833333333]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 2.5}
+            ).addTo(map_9e08fafe37bb72d152355ffbc1168411);
+        
+    
+            poly_line_ef50d64d6732fe94c3e767db89022587.bindTooltip(
+                `<div>
+                     Jalur Kapal C
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_2bb88d90edddccbed3ffdfbdd3ff83ad = L.marker(
+                [-6.725295, 114.20403333333333],
+                {
+}
+            ).addTo(map_9e08fafe37bb72d152355ffbc1168411);
+        
+    
+            var icon_f3c6b9f8cf39d3359d516123597ec48b = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "play",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+            marker_2bb88d90edddccbed3ffdfbdd3ff83ad.bindTooltip(
+                `<div>
+                     <b>Awal Terdeteksi (Kapal C)</b><br>2025-10-24 21:01<br>Lat/Lon: -6.725, 114.204
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_2bb88d90edddccbed3ffdfbdd3ff83ad.setIcon(icon_f3c6b9f8cf39d3359d516123597ec48b);
+            
+    
+            var marker_50235dc430b906350becb1fd3463d4ce = L.marker(
+                [2.2109216666666667, 101.94011833333333],
+                {
+}
+            ).addTo(map_9e08fafe37bb72d152355ffbc1168411);
+        
+    
+            var icon_a55d413d27cd14ce8bbc7a9733ac15d5 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "black",
+  "iconColor": "white",
+  "icon": "stop",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+            marker_50235dc430b906350becb1fd3463d4ce.bindTooltip(
+                `<div>
+                     <b>Akhir Terdeteksi (Kapal C)</b><br>2025-10-28 22:33
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_50235dc430b906350becb1fd3463d4ce.setIcon(icon_a55d413d27cd14ce8bbc7a9733ac15d5);
+            
+    
+            var marker_dd821901674c2a4f3e2e8e42de5280d6 = L.marker(
+                [1.1742, 103.7581],
+                {
+}
+            ).addTo(map_9e08fafe37bb72d152355ffbc1168411);
+        
+    
+            var icon_e63ede34f27b5e752fd181e5586e0d69 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "exclamation-triangle",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+            marker_dd821901674c2a4f3e2e8e42de5280d6.bindTooltip(
+                `<div>
+                     <b>LOKASI TRANSHIPMENT (51 Menit)</b>
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_dd821901674c2a4f3e2e8e42de5280d6.setIcon(icon_e63ede34f27b5e752fd181e5586e0d69);
+            
+    
+            map_9e08fafe37bb72d152355ffbc1168411.fitBounds(
+                [[-6.725295, 101.94011833333333], [2.2109216666666667, 114.20403333333333]],
+                {}
+            );
+        
+</script>
+</html>
